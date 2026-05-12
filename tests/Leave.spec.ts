@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
  
-test('Leave Apply', async ({ page }) => {
+test('Leave', async ({ page }) => {
   
     await page.goto("https://hr.app.bombayworks.org/login/");
     await page.getByText("Click here to login").click();
