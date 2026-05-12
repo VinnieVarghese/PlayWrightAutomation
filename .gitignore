@@ -1,0 +1,11 @@
+# environment variables
+.env
+
+# node modules
+node_modules/
+
+# Playwright reports
+playwright-report/
+
+# test results
+test-results/
