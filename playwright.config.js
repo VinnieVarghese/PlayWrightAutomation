@@ -24,8 +24,10 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
    
-    browserName: 'chromium'
-   
+    browserName: 'chromium',
+    headless: true,
+    actionTimeout: 60000,
+   navigationTimeout: 60000,
   },
 
   /* Configure projects for major browsers */

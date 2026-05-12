@@ -7,7 +7,17 @@ dotenv.config();
  
 test('Leave', async ({ page }) => {
   
-    await page.goto("https://hr.app.bombayworks.org/login/");
+     page.on('console', msg => console.log('BROWSER LOG:', msg.text()));
+     page.on('pageerror', err => console.log('PAGE ERROR:', err.message));
+
+     await page.goto("https://hr.app.bombayworks.org/login/", {
+    waitUntil: "domcontentloaded",
+    timeout: 60000
+  });
+
+   await page.screenshot({ path: 'debug.png', fullPage: true });
+   
+    await page.waitForTimeout(2000);
     await page.getByText("Click here to login").click();
     console.log(process.env.EMAIL);
     await page.getByLabel('Email or phone').fill(process.env.EMAIL!);
